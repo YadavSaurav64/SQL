@@ -48,14 +48,7 @@ INSERT INTO employees VALUES
 (109, 'Arjun', 50000, '2023-12-01', 5, 108),
 (110, 'Isha', 65000, '2024-06-18', NULL, NULL);
 
-SELECT * FROM employees;
 
-SHOW TABLES;
-
-SELECT COUNT(*) AS total_employees,
-SUM(salary) AS total_salary,
-AVG(salary) AS average_salary
-FROM employees;
 
 SHOW CREATE TABLE employees;
 
@@ -69,3 +62,4 @@ DESC employees;
 
 ALTER TABLE employees DROP COLUMN emp_email;
 
+/* we are not using DROP or TRUNCATE cause they can be dangerous and we want to keep the data for future reference */
