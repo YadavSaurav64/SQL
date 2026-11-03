@@ -63,4 +63,3 @@ WHERE emp_name LIKE 'R___';
 SELECT emp_name FROM employees WHERE dept_id IS NULL;
 
 SELECT emp_name FROM employees WHERE dept_id IS NOT NULL;
-
