@@ -43,3 +43,24 @@ SELECT emp_name, salary
 FROM employees
 WHERE salary >= 50000
 AND salary <= 70000;
+
+/* LIKE OPERATOR */
+
+SELECT emp_name FROM employees
+WHERE emp_name LIKE 'R%';
+
+SELECT emp_name FROM employees
+WHERE emp_name LIKE '%a';
+
+SELECT emp_name FROM employees
+WHERE emp_name LIKE '%ee%';
+
+SELECT emp_name FROM employees
+WHERE emp_name LIKE 'R___';
+
+/* IS NULL and IS NOT NULL */
+
+SELECT emp_name FROM employees WHERE dept_id IS NULL;
+
+SELECT emp_name FROM employees WHERE dept_id IS NOT NULL;
+
