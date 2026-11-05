@@ -105,3 +105,47 @@ WHERE salary > ALL (
     WHERE dept_id = 2
 );
 
+
+/* CTE : Common Table Expression */
+
+/*
+A CTE is a named temporary result set that exists for one SQL statement.
+
+It is introduced using WITH.
+*/
+
+
+WITH dept_salary AS (
+    SELECT
+        dept_id,
+        AVG(salary) AS avg_salary
+    FROM employees
+    GROUP BY dept_id
+)
+SELECT *
+FROM dept_salary
+WHERE avg_salary > 60000;
+
+/* multiple CTE */
+
+WITH department_salary AS (
+    SELECT
+        dept_id,
+        AVG(salary) AS avg_salary
+    FROM employees
+    GROUP BY dept_id
+),
+high_salary_departments AS (
+    SELECT dept_id, avg_salary
+    FROM department_salary
+    WHERE avg_salary > 60000
+)
+SELECT *
+FROM high_salary_departments;
+
+/*
+JOIN	Combine related tables
+Subquery	Use one query's result inside another
+CTE	Name and organize intermediate query results
+
+They can sometimes solve the same problem. /*
